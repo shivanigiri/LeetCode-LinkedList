@@ -41,15 +41,15 @@ class LRUCache {
             node.next.prev=node.prev;
         }
         public void add(ListNode node){
-            // ListNode prev=tail.prev;
-            // prev.next=node;
-            // node.prev=prev;
-            // node.next=tail;
-            // tail.prev=node;
-            node.next=tail.prev.next;
-            node.prev=tail.prev;
-            tail.prev.next=node;
+            ListNode prev=tail.prev;
+            prev.next=node;
+            node.prev=prev;
+            node.next=tail;
             tail.prev=node;
+            // node.next=tail.prev.next;
+            // node.prev=tail.prev;
+            // tail.prev.next=node;
+            // tail.prev=node;
         }
         
 }
